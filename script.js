@@ -1,11 +1,10 @@
-
-var container = document.getElementById("grid-container");
-let column = 5;
-let grid_dimensions = column * column;
-for (let i = grid_dimensions; i > 0; i--) {
-    var newDiv = document.createElement("div");
-    newDiv.classList.add("grid-item");
-    container.appendChild(newDiv);
+function resizeGrid(row) {
+    var container = document.getElementById("grid-container");
+    let grid_dimensions = row * row;
+    for (let i = grid_dimensions; i > 0; i--) {
+        var newDiv = document.createElement("div");
+        newDiv.classList.add("grid-item");
+        container.appendChild(newDiv);
 }
 
 var squares = document.querySelectorAll(".grid-item");
@@ -17,3 +16,20 @@ let sideInPixels = side + "px";
 squares.forEach(function(square) {
     square.style.minWidth = sideInPixels;
 });
+}
+
+function deleteGrid() {
+    var container = document.getElementById("grid-container");
+    var divsToDelete = container.querySelectorAll("div");
+
+    divsToDelete.forEach(function(div) {
+        div.remove();
+    });
+}
+
+var button = document.getElementById("resize-button")
+button.addEventListener("click", function() {
+    let userInput = prompt("enter a grid size");
+    deleteGrid();
+    resizeGrid(userInput);
+})
