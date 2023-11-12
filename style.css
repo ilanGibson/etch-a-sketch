@@ -1,0 +1,33 @@
+body {
+    display: flex;
+    flex-direction: column; /* Stack flex items vertically */
+    align-items: center; /* Center items horizontally */
+    justify-content: center; /* Center items vertically */
+    height: 90vh;
+    /* margin: 0; */
+}
+#grid-container {
+    border: 1px solid black;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    height: 700px;
+    aspect-ratio: 1;
+    margin-top: 20px
+}
+
+.grid-item {
+    margin: 0;
+    border: 1px solid black;
+    aspect-ratio: 1;
+    flex: 1;
+} 
+
+button {
+    width: 600px;
+    height: 100px;
+    margin-top: 20px;
+    background-color: black;
+    color: white;
+    font-size: 72px;
+}
