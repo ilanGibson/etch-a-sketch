@@ -7,13 +7,13 @@ function resizeGrid(row) {
         container.appendChild(newDiv);
 }
 
-var squares = document.querySelectorAll(".grid-item");
-// finding the width of squares
-// 490,000 is 700x700
-let temp = 490000 / grid_dimensions;
-let side = (Math.sqrt(temp) - 2);
-let sideInPixels = side + "px";
-squares.forEach(function(square) {
+    var squares = document.querySelectorAll(".grid-item");
+        // finding the width of squares
+    // 490,000 is 700x700
+    let temp = 490000 / grid_dimensions;
+    let side = (Math.sqrt(temp) - 2);
+    let sideInPixels = side + "px";
+    squares.forEach(function(square) {
     square.style.minWidth = sideInPixels;
 });
 }
@@ -33,3 +33,15 @@ button.addEventListener("click", function() {
     deleteGrid();
     resizeGrid(userInput);
 })
+
+var container = document.getElementById("grid-container");
+container.addEventListener("mouseover", function(event) {
+    var targetDiv = event.target.closest("div");
+    var color = ["black", "white"];
+    i = 0;
+    if (targetDiv) {
+        targetDiv.style.backgroundColor = color;
+        i++;
+        if (i === color.length) i = 0;
+    }
+});

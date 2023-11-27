@@ -18,10 +18,14 @@ body {
 
 .grid-item {
     margin: 0;
-    border: 1px solid black;
+    border: 1px solid white;
     aspect-ratio: 1;
     flex: 1;
 } 
+
+/* .grid-item:hover {
+    background-color: black;
+} */
 
 button {
     width: 600px;
